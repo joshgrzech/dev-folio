@@ -49,8 +49,9 @@ const ContactSummary: React.FC = () => {
               className="flex flex-row items-center justify-center"
               style={{
                 backgroundImage: `url(${method.iconPath})`,
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
             >
               <h1 className="text-4xl p-unit-3xl font-sans font-bold"></h1>

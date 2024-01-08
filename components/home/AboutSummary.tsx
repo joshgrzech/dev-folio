@@ -64,15 +64,17 @@ const AboutMe: React.FC = () => {
             About Me
           </m.h1>
 
-          <div className="flex flex-col md:flex-col items-center justify-center gap-4">
-            <MotionImage
-              src="/images/profile.jpeg"
-              alt="Profile Picture"
-              width={400}
-              height={400}
-              layoutId="about-me-image"
-              className="rounded-xl m-3"
-            />
+          <div className="flex flex-col md:flex-col items-center justify-center gap-4 pt-6">
+            <div className="hidden md:flex">
+              <MotionImage
+                src="/images/profile.jpeg"
+                alt="Profile Picture"
+                width={400}
+                height={400}
+                layoutId="about-me-image"
+                className="rounded-xl m-3"
+              />
+            </div>
             <div className="flex flex-col text-xl md:text-2xl gap-4">
               <h1>{`👋 Hi, I'm Josh!`}</h1>
               <h2>

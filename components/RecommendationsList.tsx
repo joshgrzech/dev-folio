@@ -37,7 +37,7 @@ const RecommendationCard = ({
   return (
     <Card
       isPressable
-      className={`w-full rounded overflow-hidden shadow-lg p-4 ${
+      className={`w-full rounded overflow-hidden shadow-lg border-medium p-4 ${
         selected ? "bg-blue-500" : ""
       }`}
       onPress={() => {

@@ -25,7 +25,7 @@ const RecommendationCard = ({
     <m.div
       layout
       layoutId={recommendation.providedBy.replace(" ", "")}
-      className="w-full rounded overflow-hidden shadow-lg p-4 "
+      className="w-full rounded overflow-hidden border-medium shadow-lg p-4 "
     >
       <m.div className="top-0 right-0">
         <LinkedInIcon color="#0077B5" />
@@ -68,7 +68,7 @@ const RecommendationCard = ({
         >
           {recommendation.providedByTitle}
         </m.p>
-        <Card>
+        <Card className="border-small">
           <CardBody>
             <p className="font-semibold">
               &quot;{recommendation.recommendationHighlight}&quot;
