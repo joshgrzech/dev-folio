@@ -64,8 +64,6 @@ const ResumeSummary: React.FC = () => {
             ))}
           </div>
           <Button
-            auto
-            shadow
             className="mt-4"
             onClick={() => {
               window.open(
