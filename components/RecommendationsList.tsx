@@ -10,9 +10,10 @@ import {
 import { m } from "framer-motion";
 import { LinkedInIcon } from "./icons";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import MotionImage from "./MotionImage";
+import { ExpandingCardContext } from "./ExpandingCardClient";
 
 type Recommendation = {
   providedBy: string;
@@ -51,13 +52,14 @@ const RecommendationCard = ({
             ""
           )}-avatar-container`}
         >
-          <MotionImage
+          <m.img
             className="rounded-full"
             src={recommendation.providedByImage}
-            alt={recommendation.providedBy}
+            alt={"avatar photo"}
             width={64}
             height={64}
             layoutId={`${recommendation.providedBy.replace(" ", "")}-avatar`}
+            id={`${recommendation.providedBy.replace(" ", "")}-avatar`}
           />
         </m.div>
         <m.div
@@ -86,6 +88,7 @@ const RecommendationCard = ({
 };
 
 const RecommendationsList = () => {
+  const { openDimensions } = useContext(ExpandingCardContext);
   const [selected, setSelected] = useState<Recommendation | null>(
     recommendations[0]
   );
@@ -98,6 +101,7 @@ const RecommendationsList = () => {
     ));
   };
 
+  console.log(openDimensions);
   return (
     <m.div
       layout
@@ -107,54 +111,40 @@ const RecommendationsList = () => {
         stiffness: 200,
         friction: 10,
       }}
-      className="flex flex-col h-full"
+      style={{
+        width: openDimensions?.width ?? "100%",
+        height: openDimensions?.height ?? "100%",
+      }}
     >
       <m.div
         layout
         layoutId="reference-list-grid-contianer"
         className="grid gap-4 grid-cols-4"
       >
-        {recommendations
-          .sort((a, b) => {
-            return (
-              new Date(a.recommendationDate).getTime() -
-              new Date(b.recommendationDate).getTime()
-            );
-          })
-          .map((recommendation, index) => (
-            <m.div
-              layout
-              layoutId={recommendation.providedBy.replace(" ", "")}
-              className="w-full flex flex-row justify-between gap-4"
-              key={index}
-            >
-              <RecommendationCard
-                selected={selected === recommendation}
-                recommendation={recommendation}
-                setSelected={setSelected}
-              />
-            </m.div>
-          ))}
+        {recommendations.map((recommendation, index) => (
+          <m.div
+            layout
+            layoutId={recommendation.providedBy.replace(" ", "")}
+            className="w-full flex flex-row justify-between gap-4"
+            key={index}
+          >
+            <RecommendationCard
+              selected={selected === recommendation}
+              recommendation={recommendation}
+              setSelected={setSelected}
+            />
+          </m.div>
+        ))}
       </m.div>
-      {selected && (
-        <Card className="flex m-5">
-          <CardBody className="max-h-unit-8xl md:max-h-unit-7xl">
-            <m.p className="text-lg font-semibold text-center md:text-left m-unit-xl">
+      {selected && openDimensions && (
+        <Card className="m-4 max-h-unit-96 md:max-h-unit-8xl">
+          <CardBody>
+            <m.p className="text-lg font-semibold text-left m-unit-lg h-full">
               {formatTextWithLineBreaks(selected.recommendation)}
             </m.p>
           </CardBody>
         </Card>
       )}
-      <Button
-        className="self-center p-10"
-        onClick={() => {
-          window.open(selected?.providedByLink, "_blank");
-        }}
-      >
-        <h1 className="text-center text-4xl font-semibold m-unit-xl">
-          View on LinkedIn
-        </h1>
-      </Button>
     </m.div>
   );
 };

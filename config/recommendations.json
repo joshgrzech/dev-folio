@@ -1,24 +1,5 @@
 [
-    {
-        "providedBy": "Nicholas Angelos",
-        "providedByImage": "https://media.licdn.com/dms/image/C5603AQFUMbISZdIpuA/profile-displayphoto-shrink_800_800/0/1580920931411?e=1710374400&v=beta&t=FE8szJPTiiPn5hlfOWNoz6_fJPvtlZmAbJZMu2hQ-Bk",
-        "providedByTitle": "Product Manager",
-        "providedByDescription": "https://media.licdn.com/dms/image/C5603AQFUMbISZdIpuA/profile-displayphoto-shrink_800_800/0/1580920931411?e=1710374400&v=beta&t=FE8szJPTiiPn5hlfOWNoz6_fJPvtlZmAbJZMu2hQ-Bk",
-        "providedByLink": "https://www.linkedin.com/in/joshgrzech/recomendations",
-        "recommendationDate": "01-05-2024",
-        "recommendation": "It was an absolute pleasure working alongside Josh on the mobile app team. His combination of technical expertise, crystal-clear communication, and a tenacious problem-solving spirit made him an invaluable asset.\n\nJosh successfully tackled complex challenges with elegance and efficiency, his dedication ensuring unwavering stability and top-notch performance for our app. But his contributions went beyond lines of code. Josh had a deep understanding of the user experience, and his unwavering focus on keeping users happy was truly admirable.\n\nHis communication skills were equally impressive. Whether presenting intricate technical concepts to stakeholders or brainstorming with designers, Josh's ability to convey ideas clearly and concisely made him a crucial bridge between teams. He was also a true team player, always open to feedback and eager to lend a hand wherever needed.\n\nJosh's positive attitude and collaborative spirit were contagious. He brought an infectious enthusiasm to every project, and his easygoing nature fostered a truly productive and creative environment.\n\nThanks to Josh's dedication, our mobile app consistently improved. He played a pivotal role in enhancing its stability, performance, and user satisfaction. I have no doubt that he will continue to excel in his career, and I wholeheartedly recommend him to any team seeking a skilled, dedicated, and collaborative developer.",
-        "recommendationHighlight": "...Josh successfully tackled complex challenges with elegance and efficiency..."
-    },
-    {
-        "providedBy": "Shandy Johnson",
-        "providedByImage": "https://media.licdn.com/dms/image/D5603AQHe33iGVsjs-w/profile-displayphoto-shrink_400_400/0/1669822880594?e=1710374400&v=beta&t=PCO3AwGDZ7qMzzMQpF2Vn6OgR3HTK-fSWGO1Kzb-qUw",
-        "providedByTitle": "Agile Project Manager",
-        "providedByDescription": "Shandy worked with Josh but on different teams",
-        "providedByLink": "https://www.linkedin.com/in/joshgrzech/recomendations",
-        "recommendationDate": "12-21-2024",
-        "recommendation": "I’m elated to provide a wholehearted recommendation for Josh, a mobile developer I had the pleasure of working with at The Krazy Coupon Lady. Josh consistently demonstrated a remarkable level of technical brilliance in every aspect of his work.\n\nJosh has an exceptional ability to translate complex technical requirements into efficient and elegant mobile solutions. He consistently delivered high-quality work, showcasing a deep understanding of mobile development frameworks and a keen eye for detail.\n\nWhat truly sets Josh apart is his collaborative spirit. He was not only approachable but also actively engaged in fostering a positive team environment. Josh consistently contributed valuable insights, making him one of the most collaborative team members I have had the pleasure of working with. His willingness to share knowledge and expertise greatly enhanced the overall productivity and success of our projects. ",
-        "recommendationHighlight": "...a deep understanding of mobile development frameworks and a keen eye for detail..."
-    },
+
     {
         "providedBy": "Kim Mora",
         "providedByImage": "https://media.licdn.com/dms/image/C5603AQEfAW65Qxh3rg/profile-displayphoto-shrink_400_400/0/1660524561123?e=1710374400&v=beta&t=aXiCou7XSvVk5tG6p4chs5h5mMyOYaDxpMDfXj4J-hM",
@@ -39,5 +20,25 @@
         "recommendationDate": "01-08-2024",
         "recommendation":"Josh is one of the top engineers I've ever had the pleasure of working with. He's also one of the top coworkers as well. He's smart and sharp, yet kind and upbeat; also hard-working and ambitious, a rare set of qualities for an engineer. \n\nI had the pleasure of working with Josh as his leader for over 2 years at The Krazy Coupon Lady. \nJosh is a go-getter. He has an outstanding balance of seeking behavior and autonomy. He really cares about his work, and the passion he puts into it shows through constantly. \n\nJosh always goes above and beyond because he genuinely cares about the product he is producing. From a manager's perspective, he's the best kind of employee to have- he's always looking to leave the areas he works in better than when he got there. He's always willing to help out a fellow coworker. Josh is constantly showing genuine kindness to those with whom he works, and it leaves you feeling great to have interacted with him.\n\nJosh comes into the room with unmatched positivity and a genuinely open mind and ears. Josh was truly the development leader on our app team.\n\nI recommend Josh to any hiring manager looking to \"skip the line\" and find that once-in-a-lifetime engineer to bolster your team with both development power and a great personality!",
         "recommendationHighlight": "...one of the top engineers I've ever had the pleasure of working with..."
+    },
+        {
+        "providedBy": "Nicholas Angelos",
+        "providedByImage": "https://media.licdn.com/dms/image/C5603AQFUMbISZdIpuA/profile-displayphoto-shrink_800_800/0/1580920931411?e=1710374400&v=beta&t=FE8szJPTiiPn5hlfOWNoz6_fJPvtlZmAbJZMu2hQ-Bk",
+        "providedByTitle": "Product Manager",
+        "providedByDescription": "https://media.licdn.com/dms/image/C5603AQFUMbISZdIpuA/profile-displayphoto-shrink_800_800/0/1580920931411?e=1710374400&v=beta&t=FE8szJPTiiPn5hlfOWNoz6_fJPvtlZmAbJZMu2hQ-Bk",
+        "providedByLink": "https://www.linkedin.com/in/joshgrzech/recomendations",
+        "recommendationDate": "01-05-2024",
+        "recommendation": "It was an absolute pleasure working alongside Josh on the mobile app team. His combination of technical expertise, crystal-clear communication, and a tenacious problem-solving spirit made him an invaluable asset.\n\nJosh successfully tackled complex challenges with elegance and efficiency, his dedication ensuring unwavering stability and top-notch performance for our app. But his contributions went beyond lines of code. Josh had a deep understanding of the user experience, and his unwavering focus on keeping users happy was truly admirable.\n\nHis communication skills were equally impressive. Whether presenting intricate technical concepts to stakeholders or brainstorming with designers, Josh's ability to convey ideas clearly and concisely made him a crucial bridge between teams. He was also a true team player, always open to feedback and eager to lend a hand wherever needed.\n\nJosh's positive attitude and collaborative spirit were contagious. He brought an infectious enthusiasm to every project, and his easygoing nature fostered a truly productive and creative environment.\n\nThanks to Josh's dedication, our mobile app consistently improved. He played a pivotal role in enhancing its stability, performance, and user satisfaction. I have no doubt that he will continue to excel in his career, and I wholeheartedly recommend him to any team seeking a skilled, dedicated, and collaborative developer.",
+        "recommendationHighlight": "...Josh successfully tackled complex challenges with elegance and efficiency..."
+    },
+    {
+        "providedBy": "Shandy Johnson",
+        "providedByImage": "https://media.licdn.com/dms/image/D5603AQHe33iGVsjs-w/profile-displayphoto-shrink_400_400/0/1669822880594?e=1710374400&v=beta&t=PCO3AwGDZ7qMzzMQpF2Vn6OgR3HTK-fSWGO1Kzb-qUw",
+        "providedByTitle": "Agile Project Manager",
+        "providedByDescription": "Shandy worked with Josh but on different teams",
+        "providedByLink": "https://www.linkedin.com/in/joshgrzech/recomendations",
+        "recommendationDate": "12-21-2024",
+        "recommendation": "I’m elated to provide a wholehearted recommendation for Josh, a mobile developer I had the pleasure of working with at The Krazy Coupon Lady. Josh consistently demonstrated a remarkable level of technical brilliance in every aspect of his work.\n\nJosh has an exceptional ability to translate complex technical requirements into efficient and elegant mobile solutions. He consistently delivered high-quality work, showcasing a deep understanding of mobile development frameworks and a keen eye for detail.\n\nWhat truly sets Josh apart is his collaborative spirit. He was not only approachable but also actively engaged in fostering a positive team environment. Josh consistently contributed valuable insights, making him one of the most collaborative team members I have had the pleasure of working with. His willingness to share knowledge and expertise greatly enhanced the overall productivity and success of our projects. ",
+        "recommendationHighlight": "...a deep understanding of mobile development frameworks and a keen eye for detail..."
     }
 ]

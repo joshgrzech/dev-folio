@@ -1,6 +1,12 @@
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+} from "@nextui-org/react";
 import { LayoutGroup, m, useWillChange } from "framer-motion";
-
+import { CloseIcon } from "./icons";
 export interface ExpandingCardProps {
   open?: boolean;
   onPress?: () => void;
@@ -16,6 +22,7 @@ export interface ExpandingCardProps {
   defaultClass?: string;
   initialDimensions?: DOMRect;
   children?: React.ReactNode;
+  openDimensions?: DOMRect;
 }
 
 const ExpandingCard = ({
@@ -33,6 +40,7 @@ const ExpandingCard = ({
   defaultClass,
   initialDimensions,
   children,
+  openDimensions,
 }: ExpandingCardProps) => {
   const willChange = useWillChange();
 
@@ -88,13 +96,20 @@ const ExpandingCard = ({
         }}
       >
         <Card
-          isHoverable
-          isPressable
+          isHoverable={open ? false : true}
+          isPressable={open ? false : true}
           className="h-full w-full"
           onPress={() => {
             onPress && onPress();
           }}
         >
+          {open && (
+            <div className="absolute top-4 right-4 z-50">
+              <Button onPress={() => onPress && onPress()}>
+                <CloseIcon />
+              </Button>
+            </div>
+          )}
           <LayoutGroup>
             {cardHeader && (
               <CardHeader className="overflow-hidden">
@@ -123,6 +138,9 @@ const ExpandingCard = ({
                     stiffness: 200,
                     friction: 10,
                   }}
+                  className={
+                    open ? "flex w-full h-full justify-center" : "w-full h-full"
+                  }
                 >
                   {open && openCardBody ? openCardBody : cardBody}
                 </m.div>

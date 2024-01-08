@@ -54,6 +54,7 @@ const AboutMe: React.FC = () => {
             stiffness: 200,
             friction: 10,
           }}
+          className="flex flex-col items-center justify-center w-full"
         >
           <m.h1
             layout
@@ -63,39 +64,35 @@ const AboutMe: React.FC = () => {
             About Me
           </m.h1>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col md:flex-col items-center justify-center gap-4">
             <MotionImage
               src="/images/profile.jpeg"
               alt="Profile Picture"
               width={400}
               height={400}
               layoutId="about-me-image"
-              className="rounded-xl"
+              className="rounded-xl m-3"
             />
-            <m.ul className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Dynamic and innovative
-              </m.li>
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Extensive experience in TypeScript & Swift, and a strong
-                focus on React Native.
-              </m.li>
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Proven track record in developing engaging, user-friendly
-                mobile applications.
-              </m.li>
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Skilled in translating complex requirements into functional
-                and aesthetically pleasing app features.
-              </m.li>
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Adept at working in fast paced environments
-              </m.li>
-              <m.li className="text-4xl font-semibold text-center md:text-left m-unit-xl text-ellipsis">
-                ➖ Consistently delivers projects on time without compromising
-                on quality.
-              </m.li>
-            </m.ul>
+            <div className="flex flex-col text-xl md:text-2xl gap-4">
+              <h1>{`👋 Hi, I'm Josh!`}</h1>
+              <h2>
+                {`🧙‍♂️✨ I'm a digital wizard who speaks Swift and conjures apps
+                with React Native!`}
+              </h2>
+              <h3>{`📱 Sleek UIs and bare-metal performance in Swift? Got it.`}</h3>
+              <h3>{`↔️ Cross platform solutions in React Native? You bet.`}</h3>
+              <h3>{`🔧 I’m all about elegant solutions for complex challenges`}</h3>
+              <h3>{`🖥️ My workspace? A masterpiece of creative chaos.`}</h3>
+              <h3>
+                {`🎶 Off the clock, I'm either crafting tunes or tinkering with
+                AI.`}
+              </h3>
+              <h3>
+                {`🤝 Think we can collaborate on something cool or just want to
+                chat tech? I’m always up for connecting with fellow enthusiasts.
+                Let’s make things happen. 🚀`}
+              </h3>
+            </div>
           </div>
         </m.div>
       }

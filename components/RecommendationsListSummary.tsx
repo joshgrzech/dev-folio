@@ -38,10 +38,10 @@ const RecommendationCard = ({
         )}-avatar-container`}
         className="flex items-center justify-center mx-auto"
       >
-        <MotionImage
+        <m.img
           className="rounded-full"
           src={recommendation.providedByImage}
-          alt={recommendation.providedBy}
+          alt={"avatar photo"}
           width={64}
           height={64}
           layoutId={`${recommendation.providedBy.replace(" ", "")}-avatar`}
@@ -93,16 +93,9 @@ const RecommendationsListSummary = () => {
       layoutId="reference-list-grid-contianer"
       className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
     >
-      {recommendations
-        .sort((a, b) => {
-          return (
-            new Date(a.recommendationDate).getTime() -
-            new Date(b.recommendationDate).getTime()
-          );
-        })
-        .map((recommendation, index) => (
-          <RecommendationCard key={index} recommendation={recommendation} />
-        ))}
+      {recommendations.map((recommendation, index) => (
+        <RecommendationCard key={index} recommendation={recommendation} />
+      ))}
     </m.div>
   );
 };

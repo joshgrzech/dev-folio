@@ -23,9 +23,7 @@ export default function Home() {
       <SkillsComponent />
       <References />
       <ResumeSummary />
-      <div className="hidden md:flex md:w-full">
-        <AboutMe />
-      </div>
+      <AboutMe />
       <ContactSummary />
     </section>
   );
