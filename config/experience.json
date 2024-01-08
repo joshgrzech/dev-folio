@@ -1,0 +1,40 @@
+{
+  "experiences": [
+    {
+      "title": "Mobile Engineer",
+      "company": "The Krazy Coupon Lady",
+      "dateRange": "August 2021 - December 2023",
+      "location": "Remote",
+      "description": [
+        "Development of a React Native application for an online publisher with 3 million+ active monthly users, achieving an increase in engagement and revenue.",
+        "Collaborated with cross-functional teams to configure native APIs and SDKs.",
+        "Maintained and updated legacy infrastructure, achieving improved performance and a 99% crash-free user rate.",
+        "Spearheaded the mobile transition to TypeScript and React-Native framework updates.",
+        "Multi-platform SDK development with custom native module authoring using Kotlin, Java, Objective-C, and Swift.",
+        "Increased shipping of revenue-driving products through new development workflows for improved engineering efficiency."
+      ]
+    },
+    {
+      "title": "Sales Expert - Mobile",
+      "company": "T-Mobile",
+      "dateRange": "January 2020 - August 2021",
+      "location": "Bentonville, Arkansas",
+      "description": [
+        "Resolved complex technical issues for iOS, Android, and IoT devices, boosting customer satisfaction and revenue.",
+        "Managed critical customer billing and support issues, showcasing problem-solving and interpersonal skills.",
+        "Contributed significantly to the store's top 10% performance in the region by driving personal and store KPIs."
+      ]
+    },
+    {
+      "title": "Principal Helpdesk Engineer",
+      "company": "CTS",
+      "dateRange": "March 2018 - January 2020",
+      "location": "Denver, Colorado",
+      "description": [
+        "Administered IT solutions focusing on security and HIPAA compliance for over 120 clients.",
+        "Developed and implemented full-stack solutions to streamline client services and operational efficiency.",
+        "Optimized technology maintenance, reducing user-issue resolution time and increasing ticket close rate."
+      ]
+    }
+  ]
+}
