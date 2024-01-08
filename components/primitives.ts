@@ -52,7 +52,7 @@ export const subtitle = tv({
   }
 });
 
-//transform scale 
+
 export const scale = tv({
   base: "transform scale-100",
   variants: {

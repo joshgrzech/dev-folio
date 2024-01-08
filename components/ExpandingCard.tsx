@@ -91,7 +91,7 @@ const ExpandingCard = ({
           isHoverable
           isPressable
           className="h-full w-full"
-          onPressEnd={() => {
+          onPress={() => {
             onPress && onPress();
           }}
         >

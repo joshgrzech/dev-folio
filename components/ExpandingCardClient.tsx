@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import ExpandingCard, { ExpandingCardProps } from "./ExpandingCard"; // Assuming this is your server component
-
+import ExpandingCard, { ExpandingCardProps } from "./ExpandingCard";
 const ExpandingCardClient = ({ ...props }: ExpandingCardProps) => {
   const [open, setOpen] = useState(false);
   const [zIndex, setZIndex] = useState(0);
@@ -19,8 +18,16 @@ const ExpandingCardClient = ({ ...props }: ExpandingCardProps) => {
     setZIndex(100);
   };
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
+
   return (
-    <div ref={ref} style={{ height: "100%", width: "100%", zIndex }}>
+    <div ref={ref} style={{ zIndex }} className="w-full h-full">
       <ExpandingCard
         {...props}
         open={open}

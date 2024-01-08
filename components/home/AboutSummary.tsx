@@ -37,7 +37,7 @@ const AboutMe: React.FC = () => {
                 layoutId="about-me-text"
                 className={title({ color: "pink" })}
               >
-                About Me
+                More About Me
               </m.h1>
             </m.div>
           </m.div>

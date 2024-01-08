@@ -4,8 +4,8 @@ import { title } from "../primitives";
 import { Button, Card } from "@nextui-org/react";
 import ExpandingCardClient from "../ExpandingCardClient";
 import { m } from "framer-motion";
-import { experiences } from "@/config/experience.json";
-import { DownloadIcon } from "../icons";
+import experiences from "@/config/experience.json";
+import { CornerHandleIcon, DownloadIcon } from "../icons";
 type Experience = {
   title: string;
   company: string;
@@ -37,23 +37,30 @@ const ResumeSummary: React.FC = () => {
   return (
     <ExpandingCardClient
       cardBody={
-        <div
-          className="h-unit-5xl md:h-unit-8xl"
-          style={{
-            display: "flex",
-            backgroundImage: `url("/images/word-cloud.svg")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            textAlign: "center",
-            backgroundBlendMode: "overlay",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Card className="p-unit-lg shadow-lg rounded-md">
-            <h1 className={title({ color: "green" })}>View My Resume</h1>
-          </Card>
+        <div className="flex flex-col">
+          <div
+            className="h-unit-5xl md:h-unit-8xl"
+            style={{
+              display: "flex",
+              backgroundImage: `url("/images/word-cloud.svg")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              textAlign: "center",
+              backgroundBlendMode: "overlay",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="p-unit-lg shadow-lg rounded-md backdrop-blur-lg">
+              <h1 className={`${title({ color: "green" })} m-2 leading-3`}>
+                Explore My Career Highlights
+              </h1>
+            </div>
+          </div>
+          <div className="self-end">
+            <CornerHandleIcon />
+          </div>
         </div>
       }
       openCardBody={

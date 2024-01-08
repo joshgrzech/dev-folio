@@ -4,6 +4,7 @@ import SkillsComponent from "@/components/home/SkillsShowcase";
 import AboutMe from "@/components/home/AboutSummary";
 import ResumeSummary from "@/components/home/ResumeSummary";
 import ContactSummary from "@/components/home/ContactSummary";
+import References from "@/components/home/References";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       </Card>
 
       <SkillsComponent />
+      <References />
       <ResumeSummary />
       <div className="hidden md:flex md:w-full">
         <AboutMe />
