@@ -84,9 +84,6 @@ const ExpandingCard = ({
             document.body.style.overflow = "auto";
             setZIndex && setZIndex(0);
           }
-          if (open) {
-            document.body.style.overflow = "hidden";
-          }
         }}
       >
         <Card
