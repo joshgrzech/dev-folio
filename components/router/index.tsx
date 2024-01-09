@@ -13,13 +13,84 @@ import ExpandingCardClient from "../ExpandingCardClient";
 import { Card } from "@nextui-org/react";
 import { subtitle, title } from "../primitives";
 import { m } from "framer-motion";
-import { useEffect } from "react";
-import ts from "typescript";
 
 export interface Skill {
   name: string;
   icon: string;
+  route: string;
+  projectsFilter: (projects: ProjectInfo[]) => ProjectInfo[];
 }
+
+const skills = [
+  {
+    name: "Mobile Apps",
+    icon: "/images/mobile.png",
+    route: CardRoute.Mobile,
+    projectsFilter: (projects) =>
+      projects.filter((project) => {
+        let show = false;
+        if (project.platforms.includes("android")) {
+          show = true;
+        }
+        if (project.platforms.includes("ios")) {
+          show = true;
+        }
+        if (project.technologies.includes("react-native")) {
+          show = true;
+        }
+        return show;
+      }),
+  },
+  {
+    name: "Web Apps",
+    icon: "/images/web.png",
+    route: CardRoute.Web,
+    projectsFilter: (projects) =>
+      projects.filter((project) => {
+        let show = false;
+        if (project.platforms.includes("web")) {
+          show = true;
+        }
+        if (project.technologies.includes("nextjs")) {
+          show = true;
+        }
+        return show;
+      }),
+  },
+  {
+    name: "Built w/ React Native",
+    icon: "/images/react_native.png",
+    route: CardRoute.ReactNative,
+    projectsFilter: (projects) =>
+      projects.filter((project) => {
+        let show = false;
+        if (project.technologies.includes("react-native")) {
+          show = true;
+        }
+        return show;
+      }),
+  },
+  {
+    name: "Built w/ Swift",
+    icon: "/images/swift.png",
+    route: CardRoute.Swift,
+    projectsFilter: (projects) =>
+      projects.filter((project) => {
+        let show = false;
+        console.log(project.platforms);
+        if (project.platforms.includes("macos")) {
+          show = true;
+        }
+        if (project.platforms.includes("ios")) {
+          show = true;
+        }
+        if (project.technologies.includes("swift")) {
+          show = true;
+        }
+        return show;
+      }),
+  },
+];
 
 export enum CardRoute {
   Swift = "swift",
@@ -32,17 +103,6 @@ export enum CardRoute {
   Contact = "contact",
   Home = "/",
 }
-
-const skills = [
-  { name: "Mobile Apps", icon: "/images/mobile.png", route: CardRoute.Mobile },
-  { name: "Web Apps", icon: "/images/web.png", route: CardRoute.Web },
-  {
-    name: "Built w/ React Native",
-    icon: "/images/react_native.png",
-    route: CardRoute.ReactNative,
-  },
-  { name: "Built w/ Swift", icon: "/images/swift.png", route: CardRoute.Swift },
-];
 
 const routes = [
   {

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../../../MotionImage";
 import { m } from "framer-motion";
 import { Skill } from "../..";
+import ProjectsList from "@/components/Projects";
 
 const OpenSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
   return (
@@ -22,6 +23,8 @@ const OpenSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
         width={100}
         height={100}
       />
+
+      <ProjectsList skill={skill} />
     </m.div>
   );
 };
