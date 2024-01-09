@@ -9,14 +9,14 @@ import { LayoutGroup, m, useWillChange } from "framer-motion";
 import { CloseIcon } from "./icons";
 export interface ExpandingCardProps {
   open?: boolean;
-  onPress?: () => void;
+  onPress?: (open: boolean) => void;
   cardBody?: React.ReactNode;
   cardFooter?: React.ReactNode;
   cardHeader?: React.ReactNode;
   openCardBody?: React.ReactNode;
   openCardFooter?: React.ReactNode;
   openCardHeader?: React.ReactNode;
-  layoutId?: string;
+  layoutId: string;
   zIndex?: number;
   setZIndex?: (zIndex: number) => void;
   defaultClass?: string;
@@ -39,28 +39,11 @@ const ExpandingCard = ({
   setZIndex,
   defaultClass,
   initialDimensions,
-  children,
-  openDimensions,
 }: ExpandingCardProps) => {
   const willChange = useWillChange();
 
   return (
     <m.div>
-      {open && (
-        <div
-          style={
-            initialDimensions
-              ? {
-                  width: initialDimensions.width,
-                  height: initialDimensions.height,
-                }
-              : {
-                  width: "100%",
-                  height: "100%",
-                }
-          }
-        />
-      )}
       <m.div
         layout
         layoutId={`${layoutId}-background`}
@@ -89,9 +72,19 @@ const ExpandingCard = ({
           open ? "fixed inset-0 p-2 md:p-10" : ""
         }`}
         style={{ willChange, zIndex }}
+        onLayoutAnimationStart={() => {
+          const scrollPosition = sessionStorage.getItem("scrollPosition");
+          if (scrollPosition) {
+            window.scrollTo(0, parseInt(scrollPosition));
+          }
+        }}
         onLayoutAnimationComplete={() => {
           if (!open) {
+            document.body.style.overflow = "auto";
             setZIndex && setZIndex(0);
+          }
+          if (open) {
+            document.body.style.overflow = "hidden";
           }
         }}
       >
@@ -100,12 +93,14 @@ const ExpandingCard = ({
           isPressable={open ? false : true}
           className="h-full w-full"
           onPress={() => {
-            onPress && onPress();
+            sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+
+            onPress && onPress(!open);
           }}
         >
           {open && (
             <div className="absolute top-4 right-4 z-50">
-              <Button onPress={() => onPress && onPress()}>
+              <Button onPress={() => onPress && onPress(!open)}>
                 <CloseIcon />
               </Button>
             </div>

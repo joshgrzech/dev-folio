@@ -1,24 +1,15 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
 } from "@nextui-org/navbar";
-
 import { Link } from "@nextui-org/link";
-
-import { link as linkStyles } from "@nextui-org/theme";
-
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
-import clsx from "clsx";
-
 import { ThemeSwitch } from "@/components/theme-switch";
 import { TwitterIcon, GithubIcon, LinkedInIcon } from "@/components/icons";
-
 import { Logo } from "@/components/icons";
 
 export const Navbar = () => {

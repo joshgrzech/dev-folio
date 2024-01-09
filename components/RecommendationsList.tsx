@@ -1,15 +1,6 @@
 import recommendations from "@/config/recommendations.json";
-import {
-  Avatar,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import { m } from "framer-motion";
-import { LinkedInIcon } from "./icons";
-import { Accordion, AccordionItem } from "@nextui-org/react";
 import React, { useContext, useState } from "react";
 import Image from "next/image";
 import MotionImage from "./MotionImage";
@@ -111,10 +102,6 @@ const RecommendationsList = () => {
         stiffness: 200,
         friction: 10,
       }}
-      style={{
-        width: openDimensions?.width ?? "100%",
-        height: openDimensions?.height ?? "100%",
-      }}
     >
       <m.div
         layout
@@ -136,8 +123,8 @@ const RecommendationsList = () => {
           </m.div>
         ))}
       </m.div>
-      {selected && openDimensions && (
-        <Card className="m-4 max-h-unit-96 md:max-h-unit-8xl">
+      {selected && (
+        <Card className="m-4 max-h-unit-8xl">
           <CardBody>
             <m.p className="text-lg font-semibold text-left m-unit-lg h-full">
               {formatTextWithLineBreaks(selected.recommendation)}

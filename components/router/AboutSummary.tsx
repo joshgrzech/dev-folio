@@ -1,19 +1,20 @@
-"use client";
 import React from "react";
 import { title } from "../primitives";
-import { Image } from "@nextui-org/react";
 import ExpandingCardClient from "../ExpandingCardClient";
 import { CornerHandleIcon } from "@/components/icons";
 import { m } from "framer-motion";
 import MotionImage from "../MotionImage";
-const AboutMe: React.FC = () => {
+import { CardRoute } from ".";
+const AboutMe = ({ open, route }: { open: boolean; route: CardRoute }) => {
   return (
     <ExpandingCardClient
-      layoutId="about-me"
+      open={open}
+      route={route}
+      layoutId={CardRoute.AboutMe.replace("/", "")}
       cardBody={
         <m.div
           layout
-          layoutId="about-me-container"
+          layoutId="about-container"
           transition={{
             type: "spring",
             damping: 20,
@@ -28,13 +29,13 @@ const AboutMe: React.FC = () => {
               alt="Profile Picture"
               width={300}
               height={300}
-              layoutId="about-me-image"
+              layoutId="about-image"
               className="rounded-xl"
             />
             <m.div layout className="text-center justify-center w-full">
               <m.h1
                 layout
-                layoutId="about-me-text"
+                layoutId="about-text"
                 className={title({ color: "pink" })}
               >
                 More About Me
@@ -47,7 +48,7 @@ const AboutMe: React.FC = () => {
       openCardBody={
         <m.div
           layout
-          layoutId="about-me-container"
+          layoutId="about-container"
           transition={{
             type: "spring",
             damping: 20,
@@ -58,7 +59,7 @@ const AboutMe: React.FC = () => {
         >
           <m.h1
             layout
-            layoutId={"about-me-text"}
+            layoutId={"about-text"}
             className={title({ color: "pink" })}
           >
             About Me
@@ -71,7 +72,7 @@ const AboutMe: React.FC = () => {
                 alt="Profile Picture"
                 width={400}
                 height={400}
-                layoutId="about-me-image"
+                layoutId="about-image"
                 className="rounded-xl m-3"
               />
             </div>

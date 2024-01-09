@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { title } from "../primitives";
 import { Button, Card } from "@nextui-org/react";
@@ -6,6 +5,7 @@ import ExpandingCardClient from "../ExpandingCardClient";
 import { m } from "framer-motion";
 import experiences from "@/config/experience.json";
 import { CornerHandleIcon, DownloadIcon } from "../icons";
+import { CardRoute } from ".";
 type Experience = {
   title: string;
   company: string;
@@ -33,9 +33,17 @@ const ExperienceCard: React.FC<{ experience: Experience }> = ({
   </m.div>
 );
 
-const ResumeSummary: React.FC = () => {
+const ResumeSummary = ({
+  open,
+  route,
+}: {
+  open: boolean;
+  route: CardRoute;
+}) => {
   return (
     <ExpandingCardClient
+      open={open}
+      route={route}
       cardBody={
         <div className="flex flex-col">
           <div
@@ -83,7 +91,7 @@ const ResumeSummary: React.FC = () => {
           </Button>
         </div>
       }
-      layoutId="resume"
+      layoutId={route.replace("/", "")}
     />
   );
 };

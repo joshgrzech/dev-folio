@@ -1,30 +1,31 @@
-"use client";
 import React from "react";
 import Image from "../../../MotionImage";
 import { m } from "framer-motion";
 import { Skill } from "..";
 
-const OpenSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
+const ClosedSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
   return (
     <m.div
-      layout
       transition={{
         type: "spring",
         damping: 20,
         stiffness: 200,
         friction: 10,
       }}
+      layout
       layoutId={`${skill.name.replace(" ", "")}_${index}`}
+      className="w-full h-full"
     >
       <Image
         src={skill.icon}
         alt={skill.name}
         layoutId={`${skill.name.replace(" ", "")}_${index}_icon`}
-        width={100}
-        height={100}
+        width={280}
+        height={280}
+        className="w-full h-full"
       />
     </m.div>
   );
 };
 
-export default OpenSkillBody;
+export default ClosedSkillBody;

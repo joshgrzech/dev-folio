@@ -1,20 +1,20 @@
-"use client";
 import React from "react";
 import { title } from "../primitives";
-import { Image } from "@nextui-org/react";
 import ExpandingCardClient from "../ExpandingCardClient";
 import { CornerHandleIcon } from "@/components/icons";
 import { m } from "framer-motion";
-import MotionImage from "../MotionImage";
 import RecommendationsList from "../RecommendationsList";
 import RecommendationsListSummary from "../RecommendationsListSummary";
+import { CardRoute } from ".";
 
-const References: React.FC = () => {
+const References = ({ open, route }: { open: boolean; route: CardRoute }) => {
   return (
     <ExpandingCardClient
-      layoutId="references"
+      open={open}
+      route={route}
+      layoutId={route}
       cardHeader={
-        <m.div layout className="p-unit-lg ">
+        <m.div layout className="p-unit-lg">
           <m.h1
             layout
             layoutId="references-header-text"

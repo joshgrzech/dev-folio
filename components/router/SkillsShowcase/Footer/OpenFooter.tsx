@@ -1,4 +1,3 @@
-"use client";
 import { CornerHandleIcon } from "@/components/icons";
 import { m } from "framer-motion";
 
@@ -7,10 +6,10 @@ export interface Skill {
   icon: string;
 }
 
-const ClosedFooter = ({ skill }: { skill: Skill }) => {
+const OpenFooter = ({ skill }: { skill: Skill }) => {
   return (
     <m.div layout className="flex flex-row items-center justify-between">
-      <m.div layout className="flex-grow text-left">
+      <m.div layout className="flex-auto text-left">
         <m.h1
           layout
           layoutId={`${skill.name.replace(" ", "")}_header_text`}
@@ -25,11 +24,8 @@ const ClosedFooter = ({ skill }: { skill: Skill }) => {
           {skill.name}
         </m.h1>
       </m.div>
-      <m.div className="flex-shrink">
-        <CornerHandleIcon />
-      </m.div>
     </m.div>
   );
 };
 
-export default ClosedFooter;
+export default OpenFooter;
