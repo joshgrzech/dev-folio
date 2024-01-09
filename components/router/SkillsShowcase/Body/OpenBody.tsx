@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "../../../MotionImage";
 import { m } from "framer-motion";
-import { Skill } from "..";
+import { Skill } from "../..";
 
 const OpenSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
   return (

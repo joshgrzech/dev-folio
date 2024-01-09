@@ -44,6 +44,7 @@ const ExpandingCard = ({
 
   return (
     <m.div>
+      {open && <m.div className="default-class" style={initialDimensions} />}
       <m.div
         layout
         layoutId={`${layoutId}-background`}

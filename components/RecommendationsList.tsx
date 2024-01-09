@@ -92,7 +92,6 @@ const RecommendationsList = () => {
     ));
   };
 
-  console.log(openDimensions);
   return (
     <m.div
       layout

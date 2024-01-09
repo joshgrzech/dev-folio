@@ -43,21 +43,6 @@ const ExpandingCardClient = ({
           initialDimensions={dimensions}
         />
       </m.div>
-
-      {open && (
-        <m.div
-          className="default-class"
-          layout
-          layoutId={`${props.layoutId}-initial`}
-          style={{
-            height: dimensions?.height,
-            width: dimensions?.width,
-            position: "relative",
-            top: dimensions?.top,
-            left: dimensions?.left,
-          }}
-        />
-      )}
     </AnimatePresence>
   );
 };
