@@ -8,10 +8,6 @@ import { LazyMotion, domMax } from "framer-motion";
 import fetchAllProjectInfo, { ProjectInfo } from "@/lib/fetchProjectInfo";
 import axios from "axios";
 
-const sendSessionData = async (sessionLength: number, location: object) => {
-  await axios.post("/api/sendEmail", { sessionLength, location });
-};
-
 export const ProjectContext = React.createContext<ProjectInfo[]>([]);
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -21,24 +17,31 @@ export interface ProvidersProps {
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
   const [projectInfos, setProjectInfos] = React.useState<ProjectInfo[]>([]);
-  React.useEffect(() => {
-    fetchAllProjectInfo("joshgrzech").then(setProjectInfos);
-  }, []);
-  React.useEffect(() => {
-    const startTime = Date.now();
 
-    const handleExit = async () => {
-      const sessionLength = Date.now() - startTime;
-      const location = await axios.get("https://ipinfo.io/json"); // Get location based on IP
-      sendSessionData(sessionLength, location.data);
+  React.useEffect(() => {
+    const handleEmail = async () => {
+      try {
+        const locationData = await axios.get("https://ipapi.co/json/");
+
+        const ipLocation = locationData.data;
+        await axios.post("/api/sendEmail", { location: ipLocation });
+      } catch (e) {
+        console.log(e);
+      }
     };
 
-    window.addEventListener("beforeunload", handleExit);
+    if (projectInfos.length === 0) {
+      fetchAllProjectInfo("joshgrzech").then(setProjectInfos);
+    }
 
-    return () => {
-      window.removeEventListener("beforeunload", handleExit);
-    };
-  }, []);
+    const sessionSent = sessionStorage.getItem("emailSent");
+    const emailSent = sessionSent ? JSON.parse(sessionSent) : false;
+    if (!emailSent) {
+      handleEmail();
+      sessionStorage.setItem("emailSent", JSON.stringify(true));
+    }
+  }, [projectInfos]);
+
   return (
     <LazyMotion features={domMax}>
       <NextUIProvider navigate={router.push}>
