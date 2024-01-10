@@ -6,6 +6,8 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import clsx from "clsx";
 import type { Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -48,6 +50,8 @@ export default function RootLayout({
               {children}
             </main>
           </div>
+          <SpeedInsights />
+          <Analytics />
         </Providers>
       </body>
     </html>

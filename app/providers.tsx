@@ -5,27 +5,18 @@ import { useRouter } from "next/navigation";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { LazyMotion, domMax } from "framer-motion";
-import { Analytics } from "@vercel/analytics/react";
-import fetchAllProjectInfo, { ProjectInfo } from "@/lib/fetchProjectInfo";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
-export const ProjectContext = React.createContext<ProjectInfo[]>([]);
 export interface ProvidersProps {
   children: React.ReactNode;
   themeProps?: ThemeProviderProps;
 }
 
-export async function Providers({ children, themeProps }: ProvidersProps) {
+export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
-  const projectInfo = await fetchAllProjectInfo("joshgrzech");
   return (
     <LazyMotion features={domMax}>
       <NextUIProvider navigate={router.push}>
-        <ProjectContext.Provider value={projectInfo}>
-          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
-          <SpeedInsights />
-          <Analytics />
-        </ProjectContext.Provider>
+        <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
       </NextUIProvider>
     </LazyMotion>
   );

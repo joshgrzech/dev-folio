@@ -1,7 +1,6 @@
-import { ProjectContext } from "@/app/providers";
 import { ProjectInfo } from "@/lib/fetchProjectInfo";
 import React, { useContext, useState } from "react";
-import CardRouter, { CardRoute, Skill } from "./router";
+import { ProjectContext, Skill } from "./router";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 
 interface ProjectCardProps {
