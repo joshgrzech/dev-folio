@@ -17,6 +17,16 @@ export interface ProvidersProps {
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
   const [projectInfos, setProjectInfos] = React.useState<ProjectInfo[]>([]);
+  const [visitLongerThan5Seconds, setVisitLongerThan5Seconds] =
+    React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && !visitLongerThan5Seconds) {
+      setTimeout(() => {
+        setVisitLongerThan5Seconds(true);
+      }, 5000);
+    }
+  }, [visitLongerThan5Seconds]);
 
   React.useEffect(() => {
     if (projectInfos.length === 0) {
@@ -38,11 +48,11 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
     const sessionSent = sessionStorage.getItem("emailSent");
     const emailSent = sessionSent ? JSON.parse(sessionSent) : false;
-    if (!emailSent && typeof window !== "undefined") {
+    if (!emailSent && visitLongerThan5Seconds) {
       handleEmail();
       sessionStorage.setItem("emailSent", JSON.stringify(true));
     }
-  }, [projectInfos]);
+  }, [visitLongerThan5Seconds]);
 
   return (
     <LazyMotion features={domMax}>
