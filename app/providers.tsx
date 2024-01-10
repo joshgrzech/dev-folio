@@ -19,6 +19,12 @@ export function Providers({ children, themeProps }: ProvidersProps) {
   const [projectInfos, setProjectInfos] = React.useState<ProjectInfo[]>([]);
 
   React.useEffect(() => {
+    if (projectInfos.length === 0) {
+      fetchAllProjectInfo("joshgrzech").then(setProjectInfos);
+    }
+  }, [projectInfos]);
+
+  React.useEffect(() => {
     const handleEmail = async () => {
       try {
         const locationData = await axios.get("https://ipapi.co/json/");
@@ -30,13 +36,9 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       }
     };
 
-    if (projectInfos.length === 0) {
-      fetchAllProjectInfo("joshgrzech").then(setProjectInfos);
-    }
-
     const sessionSent = sessionStorage.getItem("emailSent");
     const emailSent = sessionSent ? JSON.parse(sessionSent) : false;
-    if (!emailSent) {
+    if (!emailSent && typeof window !== "undefined") {
       handleEmail();
       sessionStorage.setItem("emailSent", JSON.stringify(true));
     }
