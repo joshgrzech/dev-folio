@@ -7,6 +7,7 @@ import { ThemeProviderProps } from "next-themes/dist/types";
 import { LazyMotion, domMax } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import fetchAllProjectInfo, { ProjectInfo } from "@/lib/fetchProjectInfo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const ProjectContext = React.createContext<ProjectInfo[]>([]);
 export interface ProvidersProps {
@@ -22,6 +23,7 @@ export async function Providers({ children, themeProps }: ProvidersProps) {
       <NextUIProvider navigate={router.push}>
         <ProjectContext.Provider value={projectInfo}>
           <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+          <SpeedInsights />
           <Analytics />
         </ProjectContext.Provider>
       </NextUIProvider>
