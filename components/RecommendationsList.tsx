@@ -3,8 +3,9 @@ import { Card, CardBody } from "@nextui-org/react";
 import { m } from "framer-motion";
 import React, { useContext, useState } from "react";
 import Image from "next/image";
-import MotionImage from "./MotionImage";
 import { ExpandingCardContext } from "./ExpandingCardClient";
+
+const MImage = m(Image);
 
 type Recommendation = {
   providedBy: string;
@@ -36,23 +37,6 @@ const RecommendationCard = ({
       }}
     >
       <CardBody className="overflow-hidden">
-        <m.div
-          layout
-          layoutId={`${recommendation.providedBy.replace(
-            " ",
-            ""
-          )}-avatar-container`}
-        >
-          <m.img
-            className="rounded-full"
-            src={recommendation.providedByImage}
-            alt={"avatar photo"}
-            width={64}
-            height={64}
-            layoutId={`${recommendation.providedBy.replace(" ", "")}-avatar`}
-            id={`${recommendation.providedBy.replace(" ", "")}-avatar`}
-          />
-        </m.div>
         <m.div
           layout
           layoutId={`${recommendation.providedBy.replace(

@@ -1,3 +1,5 @@
+const noFetch = ["/", "", "resume", "references", "about"];
+
 export interface ProjectInfo {
   name: string;
   description: string;
@@ -5,12 +7,16 @@ export interface ProjectInfo {
   platforms: string[];
   features: string[];
   repositoryUrl: string;
-  liveDemoUrl?: string; // Optional, in case some projects don't have a live demo
-  startDate: string; // Format: YYYY-MM-DD
-  endDate?: string; // Optional, as some projects might be ongoing
+  liveDemoUrl?: string;
+  startDate: string;
+  endDate?: string;
 }
 
-async function fetchAllProjectInfo(username: string): Promise<ProjectInfo[]> {
+async function fetchAllProjectInfo(
+  username: string,
+  slug: string
+): Promise<ProjectInfo[]> {
+  if (!slug || noFetch.includes(slug)) return Promise.resolve([]);
   try {
     // Fetch public repositories
     const reposResponse = await fetch(
@@ -44,8 +50,7 @@ async function fetchAllProjectInfo(username: string): Promise<ProjectInfo[]> {
     );
 
     return projectInfos.filter((info) => info !== null);
-  } catch (error) {
-    console.error("Failed to fetch project infos:", error);
+  } catch {
     return [];
   }
 }

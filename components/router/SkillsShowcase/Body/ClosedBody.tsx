@@ -22,7 +22,6 @@ const ClosedSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
         layoutId={`${skill.name.replace(" ", "")}_${index}_icon`}
         width={280}
         height={280}
-        className="w-full h-full"
       />
     </m.div>
   );

@@ -1,9 +1,10 @@
 import recommendations from "@/config/recommendations.json";
-import { Avatar, Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import { LinkedInIcon } from "./icons";
 import { m } from "framer-motion";
 import Image from "next/image";
-import MotionImage from "./MotionImage";
+
+const MImage = m(Image);
 
 type Recommendation = {
   providedBy: string;
@@ -29,23 +30,6 @@ const RecommendationCard = ({
     >
       <m.div className="top-0 right-0">
         <LinkedInIcon color="#0077B5" />
-      </m.div>
-      <m.div
-        layout
-        layoutId={`${recommendation.providedBy.replace(
-          " ",
-          ""
-        )}-avatar-container`}
-        className="flex items-center justify-center mx-auto"
-      >
-        <m.img
-          className="rounded-full"
-          src={recommendation.providedByImage}
-          alt={"avatar photo"}
-          width={64}
-          height={64}
-          layoutId={`${recommendation.providedBy.replace(" ", "")}-avatar`}
-        />
       </m.div>
       <m.div className="px-6 py-4">
         <m.div

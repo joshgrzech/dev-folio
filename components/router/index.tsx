@@ -12,7 +12,8 @@ import ExpandingCardClient from "../ExpandingCardClient";
 import { Card } from "@nextui-org/react";
 import { subtitle, title } from "../primitives";
 import { m } from "framer-motion";
-import { ProjectInfo } from "@/lib/fetchProjectInfo";
+import projectInfo from "../../config/projectInfo.json";
+import { ProjectInfo } from "../../lib/fetchProjectInfo";
 
 export const ProjectContext = createContext<ProjectInfo[]>([]);
 
@@ -90,7 +91,6 @@ const skills = [
     projectsFilter: (projects: ProjectInfo[]) =>
       projects.filter((project) => {
         let show = false;
-        console.log(project.platforms);
         if (project.platforms.includes("macos")) {
           show = true;
         }
@@ -123,15 +123,9 @@ const routes = [
     component: ContactSummary,
   },
 ];
-const CardRouter = ({
-  slug,
-  projectInfo,
-}: {
-  slug: string;
-  projectInfo: ProjectInfo[];
-}) => {
+const CardRouter = ({ slug }: { slug: string }) => {
   return (
-    <ProjectContext.Provider value={projectInfo}>
+    <ProjectContext.Provider value={projectInfo as any}>
       <m.section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <Card className="w-full p-unit-2xl">
           <div className="inline-block max-w-xxl text-center justify-center ">
@@ -164,10 +158,11 @@ const CardRouter = ({
           ))}
         </m.div>
         {routes.map((route, index) =>
-          route.component({
-            open: slug === route.route.replace("/", ""),
-            route: route.route,
-          })
+          route.route === slug ? (
+            <route.component key={index} open={true} route={route.route} />
+          ) : (
+            <route.component key={index} open={false} route={route.route} />
+          )
         )}
       </m.section>
     </ProjectContext.Provider>

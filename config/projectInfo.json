@@ -1,0 +1,92 @@
+[
+    {
+        "name": "roomDiffuser",
+        "description": "Revolutionize your interior design process with ML-driven visualization",
+        "technologies": [
+            "react-native",
+            "swift",
+            "coreml",
+            "stablediffusion"
+        ],
+        "platforms": [
+            "ios"
+        ],
+        "features": {
+            "AI-Powered Design Tools": "Easily experiment with different interior design styles using advanced AI algorithms.",
+            "Real-Time Rendering": "See your design changes come to life instantly with real-time rendering capabilities.",
+            "User-Friendly Interface": "Navigate through the app with an intuitive interface designed for simplicity and efficiency.",
+            "Customizable Templates": "Start with a variety of templates to quickly bring your interior design ideas to life.",
+            "In-App Inspiration Gallery": "Browse a gallery of designs created by other users and gain inspiration for your own projects."
+        },
+        "status": "In Development",
+        "currentVersion": "0.1.0",
+        "homepage": "https://roomdiffuser.joshgrzech.com"
+    },
+    {
+        "name": "siliconDiffusion",
+        "description": "Harness the power of CoreML and Stable Diffusion",
+        "technologies": [
+            "swift",
+            "coreml",
+            "stablediffusion"
+        ],
+        "platforms": [
+            "macos",
+            "ios"
+        ],
+        "features": {
+            "Intuitive Interface": "A user-friendly interface that simplifies the process of creating images with Stable Diffusion technology.",
+            "High-Performance Image Generation": "Leverage the power of CoreML for fast and efficient image generation on Apple devices.",
+            "Customization Options": "Personalize the image generation process with various settings and preferences.",
+            "Cross-Platform Compatibility": "Enjoy a consistent experience on both macOS and iOS devices.",
+            "Gallery and Sharing": "Easily save and share your generated images with a built-in gallery and sharing options."
+        },
+        "status": "In Development",
+        "currentVersion": "0.1.0",
+        "homepage": "https://silicondiffusion.joshgrzech.com"
+    },
+    {
+        "name": "AcousticPanel",
+        "description": "Equalize and chain VSTs and AUs on real-time audio in macOS",
+        "technologies": [
+            "swift",
+            "coreaudio"
+        ],
+        "platforms": [
+            "macos"
+        ],
+        "features": {
+            "Audio Routing": "Route audio to and from any application on your Mac, and output to any audio device",
+            "Audio Effects": "Add any VST or AU plugin to your audio chain",
+            "Advanced Equalization": "Adjust audio in real-time using a built-in customizable eq",
+            "Stream Analysis": "View real-time audio stream analysis, including frequency spectrum, waveform, and more"
+        },
+        "status": "In Development",
+        "currentVersion": "0.1.0",
+        "homepage": "https://acousticpanel.joshgrzech.com"
+    },
+    {
+        "name": "Syncopate",
+        "description": "Version control for music producers.",
+        "technologies": [
+            "nextjs",
+            "javascript",
+            "git"
+        ],
+        "platforms": [
+            "web"
+        ],
+        "features": {
+            "Version Control for Audio Production": "At the heart of Syncopate is a robust version control system. This feature allows producers to track changes, revert to previous versions, and view the history of their Ableton project files. It's similar to git, but optimized for the complexities of audio files and project data.",
+            "Seamless Collaboration": "Syncopate enables seamless collaboration among producers and audio engineers. Users can share project files, merge changes from different collaborators, and manage contributions with ease. It's like GitHub, but for music production, facilitating real-time collaboration and feedback.",
+            "Intuitive Interface": "The app boasts an intuitive, user-friendly interface that integrates smoothly with Ableton Live. Producers can access version histories, commit changes, and pull updates directly from within the Ableton environment, streamlining their workflow.",
+            "Enhanced Workflow Management": "Syncopate offers workflow management tools, including branching and merging capabilities, allowing producers to experiment with different ideas without losing the original version of their work. This feature is invaluable for exploring creative avenues in music production.",
+            "Safe and Secure": "Keeping in mind the importance of intellectual property in the music industry, Syncopate provides robust security features. All data is encrypted, and access controls ensure that only authorized collaborators can view or modify project files.",
+            "Cloud-Based Storage and Accessibility": "With cloud-based storage, Syncopate ensures that project files are accessible from anywhere, at any time. This feature is particularly beneficial for producers who are constantly on the move or work with international collaborators.",
+            "Customizable Notifications and Alerts": "Users receive customizable notifications for any changes or updates made to the project files, keeping everyone in the loop and ensuring that all collaborators are on the same page."
+        },
+        "homepage": "https://syncopate.joshgrzech.app",
+        "status": "In Development",
+        "currentVersion": "0.1.0"
+    }
+]
