@@ -15,6 +15,7 @@ const OpenSkillBody = ({ skill, index }: { skill: Skill; index: number }) => {
         friction: 10,
       }}
       layoutId={`${skill.name.replace(" ", "")}_${index}`}
+      className="flex flex-col gap-4 w-full items-center "
     >
       <Image
         src={skill.icon}

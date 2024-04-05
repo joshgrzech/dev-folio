@@ -44,11 +44,7 @@ const ExpandingCard = ({
 
   return (
     <>
-      <m.div
-        style={{
-          overflow: "hidden",
-        }}
-      >
+      <m.div>
         {open && (
           <div
             className={"w-full h-full"}

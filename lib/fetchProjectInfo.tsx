@@ -5,11 +5,14 @@ export interface ProjectInfo {
   description: string;
   technologies: string[];
   platforms: string[];
-  features: string[];
+  features: Record<string, any>;
   repositoryUrl: string;
   liveDemoUrl?: string;
   startDate: string;
   endDate?: string;
+  homepage?: string;
+  status?: string;
+  currentVersion?: string;
 }
 
 async function fetchAllProjectInfo(

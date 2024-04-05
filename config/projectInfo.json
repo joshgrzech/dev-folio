@@ -1,6 +1,6 @@
 [
     {
-        "name": "roomDiffuser",
+        "name": "interiorDiffusion",
         "description": "Revolutionize your interior design process with ML-driven visualization",
         "technologies": [
             "react-native",
@@ -20,7 +20,7 @@
         },
         "status": "In Development",
         "currentVersion": "0.1.0",
-        "homepage": "https://roomdiffuser.joshgrzech.com"
+        "homepage": "https://interiordiffusion.joshgrzech.com"
     },
     {
         "name": "siliconDiffusion",
